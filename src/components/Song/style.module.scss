@@ -1,0 +1,13 @@
+.song {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    gap: 1rem; 
+
+    .cover {
+        width: 25%;
+        border-radius: 4px;
+    }
+}

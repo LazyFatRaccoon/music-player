@@ -1,0 +1,26 @@
+.song {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    &:hover{
+        background-color: rgba(219, 117, 240,0.4);
+    }
+    .cover {
+        width: 4rem;
+    }
+    .text{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h3 {font-size: 1rem;}
+
+        h4 {font-size: 0.75rem;}
+
+    }
+}
+
+.active { 
+    background-color: rgba(107, 6, 128,0.4);
+}
