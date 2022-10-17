@@ -48,12 +48,12 @@ export default function Player({
         <input
           type="range"
           min={0}
-          max={songInfo.duration}
+          max={songInfo.duration ? songInfo.duration : 0}
           step={1}
           value={songInfo.currentTime}
           onChange={handleRangeChange}
         />
-        <p>{minuteTimeFormat(songInfo.duration)}</p>
+        <p>{songInfo.duration ? minuteTimeFormat(songInfo.duration) : 0}</p>
       </div>
       <div className={style['play-control']}>
         <FontAwesomeIcon icon={faAngleLeft} />

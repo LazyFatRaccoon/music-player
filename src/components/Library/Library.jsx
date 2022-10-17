@@ -2,9 +2,16 @@ import React from 'react';
 import style from './style.module.scss';
 import LibrarySong from 'components/LibrarySong';
 
-const Library = ({ isPlaying, audioRef, setSongs, songs, setCurrentSong }) => {
+const Library = ({
+  libraryIsOpen,
+  isPlaying,
+  audioRef,
+  setSongs,
+  songs,
+  setCurrentSong,
+}) => {
   return (
-    <div className={style.library}>
+    <div className={style.library + ' ' + (libraryIsOpen ? style.open : '')}>
       <h2>Library</h2>
       <ul>
         {songs.map(song => {

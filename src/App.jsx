@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 import Song from 'components/Song';
 import Player from 'components/Player';
 import Library from 'components/Library';
+import Nav from 'components/Nav';
 
 //import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import music from 'songs-data';
@@ -13,6 +14,7 @@ export default function App() {
   const [songs, setSongs] = useState(music());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [libraryIsOpen, setLibraryIsOpen] = useState(false);
 
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
@@ -28,16 +30,16 @@ export default function App() {
   };
 
   return (
-    <div>
-      <div>
-        <Library
-          isPlaying={isPlaying}
-          audioRef={audioRef}
-          songs={songs}
-          setCurrentSong={setCurrentSong}
-          setSongs={setSongs}
-        />
-      </div>
+    <div className="app">
+      <Nav libraryIsOpen={libraryIsOpen} setLibraryIsOpen={setLibraryIsOpen} />
+      <Library
+        libraryIsOpen={libraryIsOpen}
+        isPlaying={isPlaying}
+        audioRef={audioRef}
+        songs={songs}
+        setCurrentSong={setCurrentSong}
+        setSongs={setSongs}
+      />
 
       <Song currentSong={currentSong} />
       <Player

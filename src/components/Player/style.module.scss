@@ -1,11 +1,12 @@
 .player {
+    width: 75%;
     min-height: 15vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     .time-control {
-        width: 50%;
+        width: 100%;
         background: tomato;
         display: flex;
         input {
@@ -17,7 +18,7 @@
         }
     }
     .play-control {
-        width: 25%;
+        width: 50%;
         display: flex;
         justify-content: space-between;
         align-items: center;
