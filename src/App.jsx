@@ -59,7 +59,6 @@ export default function App() {
 
   return (
     <div className={`app ${libraryIsOpen ? 'library-active' : ''}`}>
-      <Nav libraryIsOpen={libraryIsOpen} setLibraryIsOpen={setLibraryIsOpen} />
       <Library
         libraryIsOpen={libraryIsOpen}
         isPlaying={isPlaying}
@@ -70,7 +69,9 @@ export default function App() {
         currentSong={currentSong}
       />
 
+      <Nav libraryIsOpen={libraryIsOpen} setLibraryIsOpen={setLibraryIsOpen} />
       <Song currentSong={currentSong} />
+
       <Player
         audioRef={audioRef}
         currentSong={currentSong}

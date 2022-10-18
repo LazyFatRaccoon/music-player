@@ -17,3 +17,17 @@
     }
 }
 
+@media screen and (max-height: 480px) {
+    .nav {
+        position: fixed;
+        width: 100%;
+        top:10px;
+        left:0;
+        // align-self: start;
+        // justify-content: flex-end;
+        //padding: 1rem;
+
+    }
+    
+    
+  }
