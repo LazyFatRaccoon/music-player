@@ -23,6 +23,10 @@ export default function Player({
   setSongInfo,
   songs,
   setCurrentSong,
+  setIsLooped,
+  isLooped,
+  setIsRandom,
+  isRandom,
   setSongs,
 }) {
   const playSongHandler = () => {
@@ -37,6 +41,14 @@ export default function Player({
 
   const previousSongHandler = () => {
     const index = songs.findIndex(song => song.id === currentSong.id);
+    let newIndex = index;
+    if (isRandom) {
+      while (newIndex === index) {
+        newIndex = Math.floor(Math.random() * songs.length);
+      }
+      setCurrentSong(songs[newIndex]);
+      return;
+    }
     index === 0
       ? setCurrentSong(songs[songs.length - 1])
       : setCurrentSong(songs[index - 1]);
@@ -44,6 +56,14 @@ export default function Player({
 
   const nextSongHandler = () => {
     const index = songs.findIndex(song => song.id === currentSong.id);
+    let newIndex = index;
+    if (isRandom) {
+      while (newIndex === index) {
+        newIndex = Math.floor(Math.random() * songs.length);
+      }
+      setCurrentSong(songs[newIndex]);
+      return;
+    }
     index === songs.length - 1
       ? setCurrentSong(songs[0])
       : setCurrentSong(songs[index + 1]);
@@ -143,9 +163,19 @@ export default function Player({
         />
       </div>
       <div className={style['play-control']}>
-        <FontAwesomeIcon onClick={playSongHandler} size="2x" icon={faRepeat} />
+        <FontAwesomeIcon
+          onClick={() => setIsLooped(!isLooped)}
+          size="2x"
+          style={isLooped ? { color: 'rgb(227, 151, 230)' } : ''}
+          icon={faRepeat}
+        />
 
-        <FontAwesomeIcon onClick={playSongHandler} size="2x" icon={faShuffle} />
+        <FontAwesomeIcon
+          onClick={() => setIsRandom(!isRandom)}
+          size="2x"
+          style={isRandom ? { color: 'rgb(227, 151, 230)' } : ''}
+          icon={faShuffle}
+        />
       </div>
     </div>
   );

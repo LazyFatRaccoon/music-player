@@ -14,6 +14,8 @@ export default function App() {
   const [songs, setSongs] = useState(music());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLooped, setIsLooped] = useState(false);
+  const [isRandom, setIsRandom] = useState(false);
   const [libraryIsOpen, setLibraryIsOpen] = useState(false);
 
   const [songInfo, setSongInfo] = useState({
@@ -24,7 +26,18 @@ export default function App() {
 
   const songEndHandler = () => {
     const index = songs.findIndex(song => song.id === currentSong.id);
-    const newIndex = index === songs.length - 1 ? 0 : index + 1;
+    let randomIndex = index;
+    let newIndex = index === songs.length - 1 ? 0 : index + 1;
+    if (isLooped) {
+      audioRef.current.play();
+      return;
+    }
+    if (isRandom) {
+      while (randomIndex === index) {
+        randomIndex = Math.floor(Math.random() * songs.length);
+      }
+    }
+
     setCurrentSong(songs[newIndex]);
   };
 
@@ -68,6 +81,10 @@ export default function App() {
         songs={songs}
         setSongs={setSongs}
         setCurrentSong={setCurrentSong}
+        isLooped={isLooped}
+        setIsLooped={setIsLooped}
+        isRandom={isRandom}
+        setIsRandom={setIsRandom}
       />
       <audio
         onTimeUpdate={timeUpdateHandler}
