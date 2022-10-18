@@ -30,4 +30,20 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.5s ease;
+  -moz-user-select: none; -khtml-user-select: none; user-select: none;
 } 
+
+.library-active {
+  margin-left: 20rem;
+}
+
+@media screen and (max-width: 768px) {
+  .app {
+      width: 100%;
+  }
+  .library-active {
+    margin-left: 0;
+  }
+  
+}

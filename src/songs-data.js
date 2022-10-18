@@ -42,41 +42,45 @@ function chillHop() {
       active: false,
     },
     {
-      name: 'Reflection',
+      name: 'AFTER DARK',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg',
-      artist: 'Swørn',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=9228',
+      artist: 'MR.KITTY',
+      audio:
+        'https://dl.muzoff.net/files/music/2020/11/Mr.Kitty_-_After_Dark.mp3',
       color: ['#CD607D', '#c94043'],
       id: uniqid(),
       active: false,
     },
     {
-      name: 'Under the City Stars',
+      name: 'Blue Monday',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg',
-      artist: 'Aso, Middle School, Aviino',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=10074',
+      artist: 'New Order',
+      audio:
+        'https://cdn8.sefon.pro/prev/DhyqEaYNb7T-A4wV6_1szw/1666156760/1/New%20Order%20-%20Blue%20Monday%20%28192kbps%29.mp3',
       color: ['#205950', '#2ab3bf'],
       id: uniqid(),
       active: false,
     },
     {
-      name: 'Under the City Stars',
+      name: 'Smalltown Boy',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg',
-      artist: 'Aso, Middle School, Aviino',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=10074',
+      artist: 'Bronski Beat',
+      audio:
+        'https://cdn3.sefon.pro/prev/90HWjAovq8rRT-n0MdfdLQ/1666157704/133/Bronski%20Beat%20-%20Smalltown%20Boy%20%28192kbps%29.mp3',
       color: ['#205950', '#2ab3bf'],
       id: uniqid(),
       active: false,
     },
     {
-      name: 'Under the City Stars',
+      name: 'The Perfect Girl',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg',
-      artist: 'Aso, Middle School, Aviino',
-      audio: 'https://song.link/ua/i/1411429017',
+      artist: 'Mareux',
+      audio:
+        'https://dl.muzonovs.ru/files/music/2021/12/mareux-the-perfect-girl.mp3',
       color: ['#205950', '#2ab3bf'],
       id: uniqid(),
       active: false,

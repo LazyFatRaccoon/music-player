@@ -15,6 +15,9 @@ export default function Player({
   setIsPlaying,
   songInfo,
   setSongInfo,
+  songs,
+  setCurrentSong,
+  setSongs,
 }) {
   const playSongHandler = () => {
     if (isPlaying) {
@@ -24,6 +27,20 @@ export default function Player({
       audioRef.current.play();
       setIsPlaying(true);
     }
+  };
+
+  const previousSongHandler = () => {
+    const index = songs.findIndex(song => song.id === currentSong.id);
+    index === 0
+      ? setCurrentSong(songs[songs.length - 1])
+      : setCurrentSong(songs[index - 1]);
+  };
+
+  const nextSongHandler = () => {
+    const index = songs.findIndex(song => song.id === currentSong.id);
+    index === songs.length - 1
+      ? setCurrentSong(songs[0])
+      : setCurrentSong(songs[index + 1]);
   };
 
   const handleRangeChange = e => {
@@ -41,28 +58,44 @@ export default function Player({
     ).slice(-2)}`;
   };
 
+  //styles
+  const trackAnimation = {
+    transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
+
   return (
     <div className={style.player}>
       <div className={style['time-control']}>
         <p>{minuteTimeFormat(songInfo.currentTime)}</p>
-        <input
-          type="range"
-          min={0}
-          max={songInfo.duration ? songInfo.duration : 0}
-          step={1}
-          value={songInfo.currentTime}
-          onChange={handleRangeChange}
-        />
-        <p>{songInfo.duration ? minuteTimeFormat(songInfo.duration) : 0}</p>
+        <div
+          className={style.track}
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+        >
+          {' '}
+          <input
+            type="range"
+            min={0}
+            max={songInfo.duration ? songInfo.duration : 0}
+            step={1}
+            value={songInfo.currentTime}
+            onChange={handleRangeChange}
+          />
+          <div style={trackAnimation} className={style['animate-track']}></div>
+        </div>
+        <p>
+          {songInfo.duration ? minuteTimeFormat(songInfo.duration) : '0:00'}
+        </p>
       </div>
       <div className={style['play-control']}>
-        <FontAwesomeIcon icon={faAngleLeft} />
+        <FontAwesomeIcon onClick={previousSongHandler} icon={faAngleLeft} />
         <FontAwesomeIcon
           onClick={playSongHandler}
           size="2x"
           icon={isPlaying ? faPause : faPlay}
         />
-        <FontAwesomeIcon icon={faAngleRight} />
+        <FontAwesomeIcon onClick={nextSongHandler} icon={faAngleRight} />
       </div>
     </div>
   );

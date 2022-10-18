@@ -9,6 +9,7 @@ const Library = ({
   setSongs,
   songs,
   setCurrentSong,
+  currentSong,
 }) => {
   return (
     <div className={style.library + ' ' + (libraryIsOpen ? style.open : '')}>
@@ -24,6 +25,7 @@ const Library = ({
                 audioRef={audioRef}
                 setCurrentSong={setCurrentSong}
                 song={song}
+                currentSong={currentSong}
               />
             </li>
           );

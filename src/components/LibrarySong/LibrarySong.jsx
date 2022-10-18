@@ -8,23 +8,24 @@ const LibrarySong = ({
   songs,
   setCurrentSong,
   setSongs,
+  currentSong,
 }) => {
-  const { cover, name, artist, active, id } = song;
+  const { cover, name, artist, id } = song;
 
   return (
     <div
-      onClick={async () => {
-        await setCurrentSong(song);
-        if (isPlaying) audioRef.current.play();
-        const newSongs = songs.map(song =>
-          song.id === id
-            ? { ...song, active: true }
-            : { ...song, active: false }
-        );
-        await setSongs(newSongs);
-        console.log(newSongs);
+      onClick={() => {
+        setCurrentSong(song);
+
+        // const newSongs = songs.map(song =>
+        //   song.id === id
+        //     ? { ...song, active: true }
+        //     : { ...song, active: false }
+        // );
+        // await setSongs(newSongs);
+        //console.log(newSongs);
       }}
-      className={(active ? style.active : '') + ' ' + style.song}
+      className={(currentSong.id === id ? style.active : '') + ' ' + style.song}
     >
       <img className={style.cover} src={cover} alt={name} />
       <div className={style.text}>

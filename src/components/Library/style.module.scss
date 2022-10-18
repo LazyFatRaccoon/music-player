@@ -12,9 +12,7 @@
 }
 
 .open {
-    //visibility: visible;
     transform: translateX(0);
-    //color: red;
 }
 
 *{
@@ -34,3 +32,10 @@
     background-color: rgba(255, 51, 176,0.3) ;
     border-radius: 4px;
 }
+
+@media screen and (max-width: 768px) {
+    .library {
+        width: 100%;
+    }
+    
+  }
