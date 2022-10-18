@@ -6,6 +6,12 @@ import {
   faAngleLeft,
   faAngleRight,
   faPause,
+  faRepeat,
+  faShuffle,
+  faVolumeUp,
+  faMinus,
+  faPlus,
+  faVolumeMute,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default function Player({
@@ -58,6 +64,17 @@ export default function Player({
     ).slice(-2)}`;
   };
 
+  const changeVolumeHandler = direction => {
+    if (direction === '-' && audioRef.current.volume >= 0.1)
+      audioRef.current.volume -= 0.1;
+    if (direction === '+' && audioRef.current.volume < 1)
+      audioRef.current.volume += 0.1;
+  };
+
+  const muteVolumeHandler = () => {
+    audioRef.current.muted = audioRef.current.muted ? false : true;
+  };
+
   //styles
   const trackAnimation = {
     transform: `translateX(${songInfo.animationPercentage}%)`,
@@ -89,13 +106,46 @@ export default function Player({
         </p>
       </div>
       <div className={style['play-control']}>
-        <FontAwesomeIcon onClick={previousSongHandler} icon={faAngleLeft} />
+        <FontAwesomeIcon
+          onClick={previousSongHandler}
+          size="2x"
+          icon={faAngleLeft}
+        />
+
         <FontAwesomeIcon
           onClick={playSongHandler}
           size="2x"
           icon={isPlaying ? faPause : faPlay}
         />
-        <FontAwesomeIcon onClick={nextSongHandler} icon={faAngleRight} />
+
+        <FontAwesomeIcon
+          onClick={nextSongHandler}
+          size="2x"
+          icon={faAngleRight}
+        />
+      </div>
+      <div className={style['play-control']}>
+        <FontAwesomeIcon
+          onClick={() => changeVolumeHandler('-')}
+          size="2x"
+          icon={faMinus}
+        />
+        <FontAwesomeIcon
+          onClick={muteVolumeHandler}
+          size="2x"
+          icon={audioRef?.current?.muted ? faVolumeMute : faVolumeUp}
+        />
+
+        <FontAwesomeIcon
+          onClick={() => changeVolumeHandler('+')}
+          size="2x"
+          icon={faPlus}
+        />
+      </div>
+      <div className={style['play-control']}>
+        <FontAwesomeIcon onClick={playSongHandler} size="2x" icon={faRepeat} />
+
+        <FontAwesomeIcon onClick={playSongHandler} size="2x" icon={faShuffle} />
       </div>
     </div>
   );
