@@ -12,31 +12,34 @@ function chillHop() {
       active: true,
     },
     {
-      name: 'Daylight',
+      name: 'Death Is The Road To Awe',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-      artist: 'Aiguille',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=9272',
+      artist: 'Clint Mansell',
+      audio:
+        'https://dl3s1.dizer.net/aHR0cDovL2YubXAzcG9pc2submV0L21wMy8wMDMvMjU5LzUzNi8zMjU5NTM2Lm1wMw==',
       color: ['#EF8EA9', '#ab417f'],
       id: uniqid(),
       active: false,
     },
     {
-      name: 'Keep Going',
+      name: 'I Wanna Be Your Girlfriend',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg',
-      artist: 'Swørn',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=9222',
+      artist: 'Girl In Red',
+      audio:
+        'https://mp3uk.net/mp3/files/girl-in-red-i-wanna-be-your-girlfriend-mp3.mp3',
       color: ['#CD607D', '#c94043'],
       id: uniqid(),
       active: false,
     },
     {
-      name: 'Nightfall',
+      name: 'Cigarette duet',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-      artist: 'Aiguille',
-      audio: 'https://mp3.chillhop.com/serve.php/?mp3=9148',
+      artist: 'Princess Chelsea',
+      audio:
+        'https://minty.club/artist/princess-chelsea/the-cigarette-duet/princess-chelsea-the-cigarette-duet.mp3',
       color: ['#EF8EA9', '#ab417f'],
       id: uniqid(),
       active: false,
