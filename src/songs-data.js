@@ -12,17 +12,17 @@ function chillHop() {
       id: uniqid(),
       active: true,
     },
-    {
-      name: 'Death Is The Road To Awe',
-      cover:
-        'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-      artist: 'Clint Mansell',
-      audio:
-        'https://lazyfatraccoon.github.io/music-player/music/Clint_Mansell-_Death_Is_The_Road_To_Awe.mp3',
-      color: ['#EF8EA9', '#ab417f'],
-      id: uniqid(),
-      active: false,
-    },
+    // {
+    //   name: 'Death Is The Road To Awe',
+    //   cover:
+    //     'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
+    //   artist: 'Clint Mansell',
+    //   audio:
+    //     'https://lazyfatraccoon.github.io/music-player/music/Clint_Mansell-_Death_Is_The_Road_To_Awe.mp3',
+    //   color: ['#EF8EA9', '#ab417f'],
+    //   id: uniqid(),
+    //   active: false,
+    // },
     {
       name: 'I Wanna Be Your Girlfriend',
       cover:
@@ -34,17 +34,17 @@ function chillHop() {
       id: uniqid(),
       active: false,
     },
-    {
-      name: 'Cigarette duet',
-      cover:
-        'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-      artist: 'Princess Chelsea',
-      audio:
-        'https://minty.club/artist/princess-chelsea/the-cigarette-duet/princess-chelsea-the-cigarette-duet.mp3',
-      color: ['#EF8EA9', '#ab417f'],
-      id: uniqid(),
-      active: false,
-    },
+    // {
+    //   name: 'Cigarette duet',
+    //   cover:
+    //     'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
+    //   artist: 'Princess Chelsea',
+    //   audio:
+    //     'https://minty.club/artist/princess-chelsea/the-cigarette-duet/princess-chelsea-the-cigarette-duet.mp3',
+    //   color: ['#EF8EA9', '#ab417f'],
+    //   id: uniqid(),
+    //   active: false,
+    // },
     {
       name: 'AFTER DARK',
       cover:
