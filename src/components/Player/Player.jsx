@@ -164,11 +164,18 @@ export default function Player({
           size="2x"
           icon={faMinus}
         />
-        <FontAwesomeIcon
-          onClick={muteVolumeHandler}
-          size="2x"
-          icon={audioRef?.current?.muted ? faVolumeMute : faVolumeUp}
-        />
+        <div>
+          <FontAwesomeIcon
+            onClick={muteVolumeHandler}
+            size="2x"
+            icon={audioRef?.current?.muted ? faVolumeMute : faVolumeUp}
+          />
+          <p style={{ textAlign: 'center' }}>
+            {audioRef?.current?.volume
+              ? (audioRef.current.volume * 100).toFixed(0) + '%'
+              : ''}
+          </p>
+        </div>
 
         <FontAwesomeIcon
           onClick={() => changeVolumeHandler('+', 10)}
