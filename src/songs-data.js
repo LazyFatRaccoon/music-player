@@ -12,17 +12,16 @@ function chillHop() {
       id: uniqid(),
       active: true,
     },
-    // {
-    //   name: 'Death Is The Road To Awe',
-    //   cover:
-    //     'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-    //   artist: 'Clint Mansell',
-    //   audio:
-    //     'https://lazyfatraccoon.github.io/music-player/music/Clint_Mansell-_Death_Is_The_Road_To_Awe.mp3',
-    //   color: ['#EF8EA9', '#ab417f'],
-    //   id: uniqid(),
-    //   active: false,
-    // },
+    {
+      name: 'Death Is The Road To Awe',
+      cover:
+        'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
+      artist: 'Clint Mansell',
+      audio: 'https://drive.google.com/uc?id=1TEo_M4vVP6RKMj6Rc2IXElwFkFBgU3Z-',
+      color: ['#EF8EA9', '#ab417f'],
+      id: uniqid(),
+      active: false,
+    },
     {
       name: 'I Wanna Be Your Girlfriend',
       cover:
@@ -34,24 +33,22 @@ function chillHop() {
       id: uniqid(),
       active: false,
     },
-    // {
-    //   name: 'Cigarette duet',
-    //   cover:
-    //     'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
-    //   artist: 'Princess Chelsea',
-    //   audio:
-    //     'https://minty.club/artist/princess-chelsea/the-cigarette-duet/princess-chelsea-the-cigarette-duet.mp3',
-    //   color: ['#EF8EA9', '#ab417f'],
-    //   id: uniqid(),
-    //   active: false,
-    // },
+    {
+      name: 'Cigarette duet',
+      cover:
+        'https://chillhop.com/wp-content/uploads/2020/07/ef95e219a44869318b7806e9f0f794a1f9c451e4-1024x1024.jpg',
+      artist: 'Princess Chelsea',
+      audio: 'https://drive.google.com/uc?id=13NPDyibGUe2-HyT_Cb0Z6pFu5zOfivbI',
+      color: ['#EF8EA9', '#ab417f'],
+      id: uniqid(),
+      active: false,
+    },
     {
       name: 'AFTER DARK',
       cover:
         'https://chillhop.com/wp-content/uploads/2020/07/ff35dede32321a8aa0953809812941bcf8a6bd35-1024x1024.jpg',
       artist: 'MR.KITTY',
-      audio:
-        'https://dl.muzoff.net/files/music/2020/11/Mr.Kitty_-_After_Dark.mp3',
+      audio: 'https://drive.google.com/uc?id=1LWGFIO4L9FUyvZ-hAGn3gKpVnDjO6M6k',
       color: ['#CD607D', '#c94043'],
       id: uniqid(),
       active: false,
@@ -61,8 +58,7 @@ function chillHop() {
       cover:
         'https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg',
       artist: 'New Order',
-      audio:
-        'http://cdn8.sefon.pro/prev/DhyqEaYNb7T-A4wV6_1szw/1666156760/1/New%20Order%20-%20Blue%20Monday%20%28192kbps%29.mp3',
+      audio: 'https://drive.google.com/uc?id=1-FCpCAf1azHIgN8ubEnbhcn75_4GT1nU',
       color: ['#205950', '#2ab3bf'],
       id: uniqid(),
       active: false,
@@ -72,8 +68,7 @@ function chillHop() {
       cover:
         'https://chillhop.com/wp-content/uploads/2020/09/0255e8b8c74c90d4a27c594b3452b2daafae608d-1024x1024.jpg',
       artist: 'Bronski Beat',
-      audio:
-        'https://cdn3.sefon.pro/prev/90HWjAovq8rRT-n0MdfdLQ/1666157704/133/Bronski%20Beat%20-%20Smalltown%20Boy%20%28192kbps%29.mp3',
+      audio: 'https://drive.google.com/uc?id=1qdbLKEYrC_Ss7OOeCTHuGdvmU0QUxTwX',
       color: ['#205950', '#2ab3bf'],
       id: uniqid(),
       active: false,

@@ -29,6 +29,14 @@ export default function Player({
   isRandom,
   setSongs,
 }) {
+  let buffered = 0;
+  if (audioRef.current?.buffered?.length) {
+    buffered = (
+      (100 * audioRef.current.buffered.end(0)) /
+      audioRef.current.duration
+    ).toFixed(1);
+  }
+
   const playSongHandler = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -84,11 +92,12 @@ export default function Player({
     ).slice(-2)}`;
   };
 
-  const changeVolumeHandler = direction => {
-    if (direction === '-' && audioRef.current.volume >= 0.1)
-      audioRef.current.volume -= 0.1;
+  const changeVolumeHandler = (direction, volue) => {
+    if (direction === '-' && audioRef.current.volume >= volue / 100)
+      audioRef.current.volume -= volue / 100;
     if (direction === '+' && audioRef.current.volume < 1)
-      audioRef.current.volume += 0.1;
+      audioRef.current.volume += volue / 100;
+    console.log(audioRef.current.volume);
   };
 
   const muteVolumeHandler = () => {
@@ -98,6 +107,10 @@ export default function Player({
   //styles
   const trackAnimation = {
     transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
+
+  const trackBuffered = {
+    transform: `translateX(${buffered}%)`,
   };
 
   return (
@@ -120,6 +133,7 @@ export default function Player({
             onChange={handleRangeChange}
           />
           <div style={trackAnimation} className={style['animate-track']}></div>
+          <div style={trackBuffered} className={style['buffered-track']}></div>
         </div>
         <p>
           {songInfo.duration ? minuteTimeFormat(songInfo.duration) : '0:00'}
@@ -146,7 +160,7 @@ export default function Player({
       </div>
       <div className={style['play-control']}>
         <FontAwesomeIcon
-          onClick={() => changeVolumeHandler('-')}
+          onClick={() => changeVolumeHandler('-', 10)}
           size="2x"
           icon={faMinus}
         />
@@ -157,7 +171,7 @@ export default function Player({
         />
 
         <FontAwesomeIcon
-          onClick={() => changeVolumeHandler('+')}
+          onClick={() => changeVolumeHandler('+', 10)}
           size="2x"
           icon={faPlus}
         />
